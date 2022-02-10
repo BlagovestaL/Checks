@@ -1,0 +1,26 @@
+package Checks.MoreEXE;
+
+import java.util.Scanner;
+
+public class p02SleepyTomCat {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int holidayDays = Integer.parseInt(scanner.nextLine());
+
+        double workDays = 365 - holidayDays;
+        double workMin = holidayDays*127 + workDays * 63;
+        double diff = Math.abs(30000 - workMin);
+        double hour = Math.floor(diff/60);
+        double min = diff%60;
+
+        if(30000>workMin){
+            System.out.println("Tom sleeps well");
+            System.out.printf(Math.round(hour) + " hours and %.0f minutes less for play",min);
+        }else{
+            System.out.println("Tom will run away");
+            System.out.printf(Math.round(hour) + " hours and %.0f minutes more for play", min );
+
+        }
+    }
+}
