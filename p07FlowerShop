@@ -1,0 +1,32 @@
+package Checks.MoreEXE;
+
+import java.util.Scanner;
+
+public class p07FlowerShop {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int magnolias =  Integer.parseInt(scanner.nextLine());
+        int hyacinth = Integer.parseInt(scanner.nextLine());
+        int roses = Integer.parseInt(scanner.nextLine());
+        int cactus = Integer.parseInt(scanner.nextLine());
+        double priceOfTheGift = Double.parseDouble(scanner.nextLine());
+
+        double priceMagnolias = magnolias * 3.25;
+        double priceHyacinth = hyacinth * 4;
+        double priceRoses = roses * 3.50;
+        double priceCactus = cactus * 8;
+
+        double totalPrice = priceMagnolias + priceHyacinth + priceRoses + priceCactus;
+
+        double taxes = (totalPrice * 0.95);
+
+        if (priceOfTheGift>taxes) {
+            double result1 = Math.ceil(priceOfTheGift - taxes);
+            System.out.print( "She will have to borrow " + Math.round(result1) + " leva.");
+        }else {
+            double result2 = Math.floor(taxes - priceOfTheGift);
+            System.out.print("She is left with " + Math.round(result2)  + " leva.");
+        }
+    }
+}
