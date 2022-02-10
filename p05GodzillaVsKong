@@ -1,0 +1,29 @@
+package Checks.exe;
+
+import java.util.Scanner;
+
+public class p05GodzillaVsKong {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double budget = Double.parseDouble(scanner.nextLine());
+        int stat = Integer.parseInt(scanner.nextLine());
+        double clothes = Double.parseDouble(scanner.nextLine());
+
+        double decor = budget * 0.1;
+
+        if (stat > 150) {
+            clothes = clothes - (clothes * 0.1);
+        }
+        double all = decor + (stat * clothes);
+
+        if (all>budget){
+            System.out.printf( "Not enough money!%n"+"Wingard needs %.2f leva more.", all - budget);
+
+        }else if(all<=budget){
+            System.out.printf("Action!%n" + "Wingard starts filming with %.2f leva left.", budget-all);
+        }
+
+
+    }
+}
