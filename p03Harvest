@@ -1,0 +1,24 @@
+package Checks.MoreEXE;
+
+import java.util.Scanner;
+
+public class p03Harvest {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int vineyard = Integer.parseInt(scanner.nextLine());
+        double grapePer1m = Double.parseDouble(scanner.nextLine());
+        int needLitersOfWine = Integer.parseInt(scanner.nextLine());
+        int workers = Integer.parseInt(scanner.nextLine());
+
+        double totalGrape = vineyard * grapePer1m;
+        double wine = (totalGrape*0.4) / 2.5;
+
+        if (wine>needLitersOfWine){
+            System.out.printf("Good harvest this year! Total wine: " + Math.round(wine) + " liters. ");
+            System.out.printf("%n%.0f liters left -> %.0f liters per person.", wine - needLitersOfWine, (wine - needLitersOfWine) / workers);
+        }else {
+            System.out.printf("It will be a tough winter! More " + Math.round(needLitersOfWine-wine) + " liters wine needed.");
+        }
+    }
+}
