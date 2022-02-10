@@ -1,0 +1,40 @@
+package Checks.MoreEXE;
+
+import java.util.Objects;
+import java.util.Scanner;
+
+public class p08FuelTank {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner (System.in);
+
+        String fuel = scanner.nextLine();
+        double litres = Double.parseDouble(scanner.nextLine());
+
+        boolean validFuel = (fuel.equals("Diesel") || fuel.equals("Gasoline") || fuel.equals("Gas"));
+        if (!validFuel) {
+            System.out.println("Invalid fuel!");
+        }
+        switch (fuel){
+            case "Diesel":
+                if(litres<25){
+                    System.out.println("Fill your tank with diesel!");
+                }else if(litres>=25){
+                    System.out.println("You have enough diesel.");
+                }break;
+            case"Gasoline":
+                if(litres<25){
+                    System.out.println("Fill your tank with gasoline!");
+                }else if(litres>=25){
+                    System.out.println("You have enough gasoline.");
+                }break;
+            case"Gas":
+                if(litres<25){
+                    System.out.println("Fill your tank with gas!");
+                }else if(litres>=25){
+                    System.out.println("You have enough gas.");
+                }break;
+
+        }
+
+    }
+}
