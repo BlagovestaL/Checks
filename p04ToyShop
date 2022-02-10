@@ -1,0 +1,37 @@
+package Checks.exe;
+
+import java.util.Scanner;
+
+public class p04ToyShop {
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+
+        double ex = Double.parseDouble(scanner.nextLine());
+        int puz = Integer.parseInt(scanner.nextLine());
+        int doll = Integer.parseInt(scanner.nextLine());
+        int teddy = Integer.parseInt(scanner.nextLine());
+        int min = Integer.parseInt(scanner.nextLine());
+        int cam = Integer.parseInt(scanner.nextLine());
+
+        double total = ((puz*2.6)+
+                (doll*3)+
+                (teddy*4.10)+
+                (min*8.2)+
+                (cam*2));
+
+        double tot = puz+doll+teddy+min+cam;
+
+        if (tot>=50){
+           total = total -(total * 0.25);
+        }
+           total = total * 0.90;
+
+        double diff = Math.abs(total-ex);
+        if(total>= ex) {
+
+            System.out.printf("Yes! %.2f lv left.", diff);
+        }else {
+            System.out.printf("Not enough money! %.2f lv needed.",diff);
+        }
+    }
+}
