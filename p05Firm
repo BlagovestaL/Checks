@@ -1,0 +1,23 @@
+package Checks.MoreEXE;
+
+import java.util.Scanner;
+
+public class p05Firm {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int needHour = Integer.parseInt(scanner.nextLine());
+        int days = Integer.parseInt(scanner.nextLine());
+        int workers = Integer.parseInt(scanner.nextLine());
+
+        double a = days * 0.9;
+        double b = a * 8;
+        double extraordinary = workers * days * 2;
+        double totalHour = Math.floor(extraordinary + b);
+        if(totalHour>=needHour){
+            System.out.print("Yes!" + Math.round(totalHour - needHour)+" hours left.");
+        }else {
+            System.out.print("Not enough time!" + Math.round(needHour-totalHour) + " hours needed.");
+        }
+    }
+}
