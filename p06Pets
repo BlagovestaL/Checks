@@ -1,0 +1,28 @@
+package Checks.MoreEXE;
+
+import java.util.Scanner;
+
+public class p06Pets {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int days = Integer.parseInt(scanner.nextLine());
+        int foodKg = Integer.parseInt(scanner.nextLine());
+        double foodPerDayForDogKg = Double.parseDouble(scanner.nextLine());
+        double foodPerDayForCatKg = Double.parseDouble(scanner.nextLine());
+        double foodPerDayForTurtleGram = Double.parseDouble(scanner.nextLine());
+
+        double needFoodAboutDog = days * foodPerDayForDogKg;
+        double needFoodAboutCat = days * foodPerDayForCatKg;
+        double needFoodAboutTurtle = (days * foodPerDayForTurtleGram) / 1000;
+
+        double totalFood = Math.ceil(needFoodAboutDog + needFoodAboutCat + needFoodAboutTurtle);
+
+        if(totalFood<foodKg){
+            System.out.print(Math.round(foodKg - totalFood) + " kilos of food left.");
+        }else {
+            System.out.print(Math.round(totalFood-foodKg) + " more kilos of food are needed.");
+        }
+
+    }
+}
