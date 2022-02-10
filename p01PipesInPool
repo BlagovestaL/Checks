@@ -1,0 +1,28 @@
+package Checks.MoreEXE;
+
+import java.util.Scanner;
+
+public class p01PipesInPool {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int volume = Integer.parseInt(scanner.nextLine());
+        int p1 = Integer.parseInt(scanner.nextLine());
+        int p2 = Integer.parseInt(scanner.nextLine());
+        double hours = Double.parseDouble(scanner.nextLine());
+
+        double p1Total= p1 * hours;
+        double p2Total = p2 * hours;
+        double sumTotal = p1Total+p2Total;
+
+        if (sumTotal<volume){
+           sumTotal=sumTotal*0.1;
+           double resultp1 =(p1Total/sumTotal)*10;
+           double resultp2 = (p2Total/sumTotal)*10;
+            System.out.println("The pool is " + sumTotal + " % full. Pipe 1: " + resultp1 + " %. Pipe 2: " + resultp2 + " %." );
+        }else if(sumTotal>volume){
+           double sum = sumTotal-volume;
+            System.out.printf( "For "+ hours + " hours the pool over flows with %.2f liters.", sum);
+        }
+    }
+}
