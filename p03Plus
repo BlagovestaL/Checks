@@ -1,0 +1,26 @@
+package Checks.exe;
+
+import java.util.Scanner;
+
+public class p03Plus {
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+
+        double num = Double.parseDouble(scanner.nextLine());
+        String input=scanner.nextLine();
+        String output = scanner.nextLine();
+
+        if (input.equals("cm")){
+            num /=100;
+        }else if (input.equals("mm")){
+            num /=1000;
+        }
+
+        if(output.equals("cm")){
+            num *= 100;
+        }else if (output.equals("mm")){
+            num *= 1000;
+        }
+        System.out.printf("%.3f", num);
+    }
+}
